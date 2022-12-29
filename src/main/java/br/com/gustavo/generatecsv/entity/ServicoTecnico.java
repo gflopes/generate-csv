@@ -2,10 +2,7 @@ package br.com.gustavo.generatecsv.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -15,8 +12,10 @@ public class ServicoTecnico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(length = 50)
     private String nome;
 
+    @Column(length = 255)
     private String descricaoDetalhada;
 
     private boolean ativo;
